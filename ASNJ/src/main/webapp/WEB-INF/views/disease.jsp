@@ -22,7 +22,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
@@ -144,8 +145,10 @@ ul {
 										<a href="#" class="nav-link dropdown-toggle active"
 											data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item active">병(病) 피해</a>
-											<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item active">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충
+												피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -182,124 +185,124 @@ ul {
 
 	<!-- 병 피해 내용 시작 -->
 	<div id="themecast" class="container-xxl p-0 ml-5">
-		
-			<!-- 작물 카테고리 -->
-			<c:choose>
-				<c:when test="${diseaselist ne null}">
-					<c:forEach items="${diseaselist}" var="crops" end="0">
-					
-						<div class="main_category row align-items-center table table-hover"
-							style="text-align: center; width: 90%; margin: auto;">
-							<div id="NM_THEME_CATE_GROUPS" class="group_category"
-								data-demo-key="default">
-								<div class="mt-5 d-flex justify-content-center">
-									<h3 style="float: left; display: flex;">
-										<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"
-									</h3>
-									<h2 style="color: #04aa5d; display: inline-block;">${crops.disease_crops}</h2>
-									<h3 style="display: inline-block;">" 작물의 질병 정보입니다.</h3>
+
+		<!-- 작물 카테고리 -->
+		<c:choose>
+			<c:when test="${diseaselist ne null}">
+				<c:forEach items="${diseaselist}" var="crops" end="0">
+
+					<div class="main_category row align-items-center table table-hover"
+						style="text-align: center; width: 90%; margin: auto;">
+						<div id="NM_THEME_CATE_GROUPS" class="group_category"
+							data-demo-key="default">
+							<div class="mt-5 d-flex justify-content-center">
+								<h3 style="float: left; display: flex;">
+									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"
+								</h3>
+								<h2 style="color: #04aa5d; display: inline-block; width: 90px;">${crops.disease_crops}</h2>
+								<h3 style="display: inline-block;">" 작물의 질병 정보입니다.</h3>
+							</div>
+							<div class="row list_category_wrap"
+								style="align-items: center; display: flex; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+								<div class="col-sm-2" style="text-align: center;">
+									<h3 class="searchTitle" style="display: inline-block;">작물
+										선택</h3>
+									<i class="bi bi-chevron-double-right"></i>
 								</div>
-								<div class="row list_category_wrap" 
-								style="align-items: center; display: flex; justify-content: space-evenly; flex-wrap: nowrap; margin-right: 70px;">
-									<div class="col-sm-2"
-										style="text-align: center; margin-left: 14%">
-										<h3 class="searchTitle" style="display: inline-block;">작물
-											선택</h3>
-										<i class="bi bi-chevron-double-right"></i>
-									</div>
-									<div class="col-sm-7">
-										<form action="${cpath}/Disease.do" method="get"	
+								<div class="col-sm-7">
+									<form action="${cpath}/Disease.do" method="get"
 										style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="고추" value="고추"
-												<c:if test="${crops.disease_crops eq '고추'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="감" value="감"
-												<c:if test="${crops.disease_crops eq '감'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp;
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="딸기" value="딸기"
-												<c:if test="${crops.disease_crops eq '딸기'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="딸기">딸기</label>&nbsp;&nbsp;&nbsp;
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="오이" value="오이"
-												<c:if test="${crops.disease_crops eq '오이'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="오이">오이</label>&nbsp;&nbsp;&nbsp;
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="파" value="파"
-												<c:if test="${crops.disease_crops eq '파'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="파">파</label>&nbsp;&nbsp;&nbsp;
-											<input class="form-check-input" type="radio"
-												name="disease_crops" id="호박" value="호박"
-												<c:if test="${crops.disease_crops eq '호박'}" > checked="checked" </c:if>>
-											<label class="form-check-label" for="호박">호박</label>
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="고추" value="고추"
+											<c:if test="${crops.disease_crops eq '고추'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="감" value="감"
+											<c:if test="${crops.disease_crops eq '감'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="딸기" value="딸기"
+											<c:if test="${crops.disease_crops eq '딸기'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="딸기">딸기</label>&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="오이" value="오이"
+											<c:if test="${crops.disease_crops eq '오이'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="오이">오이</label>&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="파" value="파"
+											<c:if test="${crops.disease_crops eq '파'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="파">파</label>&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio"
+											name="disease_crops" id="호박" value="호박"
+											<c:if test="${crops.disease_crops eq '호박'}" > checked="checked" </c:if>>
+										<label class="form-check-label" for="호박">호박</label> <span
+											style="margin-left: 30px;">
+											<button type="submit"
+												class="btn btn-outline-success searchTitle m-2"
+												style="font-weight: bolder;">
+												<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
+											</button>
+										</span>
 
-											<span style="margin-left: 30px;">
-												<button type="submit" class="btn btn-outline-success searchTitle m-2" style="font-weight: bolder;">
-													<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
-												</button>
-											</span>
-
-										</form>
-									</div>
+									</form>
 								</div>
 							</div>
 						</div>
-					</c:forEach>
-				</c:when>
-			</c:choose>
-		</div>
-		<hr>
-		<br> <br>
+					</div>
+				</c:forEach>
+			</c:when>
+		</c:choose>
+	</div>
+	<hr>
+	<br>
+	<br>
 
-		<!-- 작물 정보 contents -->
-		<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
-			data-panel-code="FINANCE" data-parent-code="">
-			<div class="group_theme" data-block-id=""
-				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
-				data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
-				data-da="container" data-index="" data-page="1">
+	<!-- 작물 정보 contents -->
+	<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
+		data-panel-code="FINANCE" data-parent-code="">
+		<div class="group_theme" data-block-id=""
+			data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
+			data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
+			data-da="container" data-index="" data-page="1">
 
-				<div class="list_theme_wrap">
-					<ul class="list_theme container" style="padding-right: 32px;">
+			<div class="list_theme_wrap">
+				<ul class="list_theme container" style="padding-right: 32px;">
 
-						<li class="theme_item row"><strong class="col-sm-3">
-								<h4>•&nbsp;사진</h4>
-						</strong> <strong class="col-sm-3">
-								<h4 style="float: left;">•&nbsp;병명(病名)</h4>
-						</strong> <strong class="col-sm-4">
-								<h4>•&nbsp;간략설명</h4>
-						</strong></li>
+					<li class="theme_item row"><strong class="col-sm-3">
+							<h4>•&nbsp;사진</h4>
+					</strong> <strong class="col-sm-3">
+							<h4 style="float: left;">•&nbsp;병명(病名)</h4>
+					</strong> <strong class="col-sm-4">
+							<h4>•&nbsp;간략설명</h4>
+					</strong></li>
+					<hr>
+					<br>
+
+					<c:forEach items="${diseaselist}" var="list">
+						<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
+							class="theme_thumb" style="color: #000">
+							<li class="theme_item row"><img
+								src="${list.disease_imgpath}" alt="" width="auto;"
+								height="250px;" class="col-sm-3"
+								onerror="this.src='resources/image/img.png'" /> <strong
+								class="title elss col-sm-3">${list.disease_name}</strong>
+								<p class="desc col-sm-6">${list.disease_symptom}</p></li>
+						</a>
 						<hr>
-						<br>
-
-						<c:forEach items="${diseaselist}" var="list">
-							<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
-								class="theme_thumb" style="color: #000">
-								<li class="theme_item row"><img
-									src="${list.disease_imgpath}" alt="" width="auto;"
-									height="250px;" class="col-sm-3"
-									onerror="this.src='resources/image/img.png'" /> <strong
-									class="title elss col-sm-3">${list.disease_name}</strong>
-									<p class="desc col-sm-6">${list.disease_symptom}</p></li>
-							</a>
-							<hr>
-						</c:forEach>
-					</ul>
-				</div>
+					</c:forEach>
+				</ul>
 			</div>
-
-			<!-- 개별 링크 클릭 코드 -->
-			<div class="group_theme" data-block-id=""
-				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
-				data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
-				data-da="container" data-index="" data-page="6"
-				style="display: none"></div>
-			<!-- 개별 링크 클릭 코드 -->
-
 		</div>
-	
+
+		<!-- 개별 링크 클릭 코드 -->
+		<div class="group_theme" data-block-id=""
+			data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
+			data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
+			data-da="container" data-index="" data-page="6" style="display: none"></div>
+		<!-- 개별 링크 클릭 코드 -->
+
+	</div>
+
 
 	<!-- 내용 끝 -->
 

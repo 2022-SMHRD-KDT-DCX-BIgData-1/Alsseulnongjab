@@ -200,13 +200,12 @@ ul {
 								<h3 style="float: left; display: flex;">
 									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"
 								</h3>
-								<h2 style="color: #04aa5d; display: inline-block;">${crops.pest_crops}</h2>
-								<h3 style="display: inline-block;">" 작물의 해충 정보입니다.</h3>								
+								<h2 style="color: #04aa5d; display: inline-block; width: 90px;">${crops.pest_crops}</h2>
+								<h3 style="display: inline-block;">" 작물의 해충 정보입니다.</h3>
 							</div>
-							<div class="row list_category_wrap" 
-							style="align-items: center; display: flex; justify-content: space-evenly; flex-wrap: nowrap; margin-right: 70px;">
-								<div class="col-sm-2"
-									style="text-align: center; margin-left: 14%">
+							<div class="row list_category_wrap"
+								style="align-items: center; display: flex; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+								<div class="col-sm-2" style="text-align: center;">
 									<h3 class="searchTitle" style="display: inline-block;">작물
 										선택</h3>
 									<i class="bi bi-chevron-double-right"></i>
@@ -237,11 +236,11 @@ ul {
 										<input class="form-check-input" type="radio" name="pest_crops"
 											id="호박" value="호박"
 											<c:if test="${crops.pest_crops eq '호박'}" > checked="checked" </c:if>>
-										<label class="form-check-label" for="호박">호박</label>
-
-
-										<span style="margin-left: 30px;">
-											<button type="submit" class="btn btn-outline-success searchTitle m-2" style="font-weight: bolder;">
+										<label class="form-check-label" for="호박">호박</label> <span
+											style="margin-left: 30px;">
+											<button type="submit"
+												class="btn btn-outline-success searchTitle m-2"
+												style="font-weight: bolder;">
 												<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
 											</button>
 										</span>
@@ -255,55 +254,56 @@ ul {
 				</c:forEach>
 			</c:when>
 		</c:choose>
-		<hr>
-		<br> <br>
-
-		<!-- 작물 정보 contents -->
-		<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
-			data-panel-code="FINANCE" data-parent-code="">
-			<div class="group_theme" data-block-id=""
-				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
-				data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
-				data-da="container" data-index="" data-page="1">
-
-				<div class="list_theme_wrap">
-					<ul class="list_theme container" style="padding-right: 32px;">
-
-						<li class="theme_item row"><strong class="col-sm-3">
-								<h4>•&nbsp;사진</h4>
-						</strong> <strong class="col-sm-3">
-								<h4>
-									•&nbsp;해충명(害蟲名)
-									</h2>
-						</strong> <strong class="col-sm-4"><h4>•&nbsp;간략설명</h4> </strong></li>
-						<hr>
-						<br>
-
-						<c:forEach items="${pestlist}" var="list">
-							<a href="PestInfoPage.do?pest_pk=${list.pest_pk}"
-								class="theme_thumb" style="color: #000">
-								<li class="theme_item row"><img src="${list.pest_imgpath}"
-									alt="" width="auto;" height="250px;" class="col-sm-3"
-									onerror="this.src='resources/image/img.png'" /> <strong
-									class="title elss col-sm-3">${list.pest_name}</strong>
-									<p class="desc col-sm-6">${list.pest_harm}</p></li>
-							</a>
-							<hr>
-						</c:forEach>
-					</ul>
-				</div>
-			</div>
-
-			<!-- 개별 링크 클릭 코드 -->
-			<div class="group_theme" data-block-id=""
-				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
-				data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
-				data-da="container" data-index="" data-page="6"
-				style="display: none"></div>
-			<!-- 개별 링크 클릭 코드 -->
-
-		</div>
 	</div>
+	<hr>
+	<br>
+	<br>
+
+	<!-- 작물 정보 contents -->
+	<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
+		data-panel-code="FINANCE" data-parent-code="">
+		<div class="group_theme" data-block-id=""
+			data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
+			data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
+			data-da="container" data-index="" data-page="1">
+
+			<div class="list_theme_wrap">
+				<ul class="list_theme container" style="padding-right: 32px;">
+
+					<li class="theme_item row"><strong class="col-sm-3">
+							<h4>•&nbsp;사진</h4>
+					</strong> <strong class="col-sm-3">
+							<h4>
+								•&nbsp;해충명(害蟲名)
+								</h2>
+					</strong> <strong class="col-sm-4"><h4>•&nbsp;간략설명</h4> </strong></li>
+					<hr>
+					<br>
+
+					<c:forEach items="${pestlist}" var="list">
+						<a href="PestInfoPage.do?pest_pk=${list.pest_pk}"
+							class="theme_thumb" style="color: #000">
+							<li class="theme_item row"><img src="${list.pest_imgpath}"
+								alt="" width="auto;" height="250px;" class="col-sm-3"
+								onerror="this.src='resources/image/img.png'" /> <strong
+								class="title elss col-sm-3">${list.pest_name}</strong>
+								<p class="desc col-sm-6">${list.pest_harm}</p></li>
+						</a>
+						<hr>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 개별 링크 클릭 코드 -->
+		<div class="group_theme" data-block-id=""
+			data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
+			data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
+			data-da="container" data-index="" data-page="6" style="display: none"></div>
+		<!-- 개별 링크 클릭 코드 -->
+
+	</div>
+
 
 	<!-- 내용 끝 -->
 
